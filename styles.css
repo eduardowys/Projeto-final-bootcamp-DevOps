@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #004080;
+    color: #fff;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s;
+}
+
+.header:hover {
+    background-color: #003366;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff8c00;
+}
+
+.sobre-capa {
+    position: relative;
+    background-image: url('https://cdn.panrotas.com.br/portal-panrotas-statics/media-files-cache/399317/c96e8ed0694f0b6345dcdec6150642c9istock15269860721/full/1206,665,1/0/default.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre-texto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.sobre-texto p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.destinos-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.destino-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 320px;
+}
+
+.destino-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.destino-item h3 {
+    font-size: 1.4rem;
+    margin: 1rem;
+    font-weight: 600;
+}
+
+.destino-item p {
+    padding: 0 1rem 1.5rem;
+}
+
+.destino-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+#contato {
+    padding: 4rem 1rem;
+    background-color: #fff;
+}
+
+.contato h2 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.contato p {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contato input,
+.contato textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+.contato .btn {
+    padding: 1rem;
+    background-color: #004080;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.contato .btn:hover {
+    background-color: #006bb3;
+}
+
+.footer {
+    background-color: #004080;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .destinos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destino-item {
+        max-width: 100%;
+    }
+}
