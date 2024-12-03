@@ -1,0 +1,28 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  VERSION: "2.0-version"
+
+create-images:
+  stage: build
+  tags:
+    - AWS
+  before_script:
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASS  # Configurado as variables no Git Lab
+  script:
+    - docker build -t eduardow3s/demoday:$VERSION app/. # Configurado Docker HUb
+    - docker push eduardow3s/demoday:$VERSION
+  
+run_docker:
+  stage: deploy
+  tags: 
+    - AWS
+  before_script:
+    - docker rm -f app-docker || true
+    #- docker rmi $(docker images -q)
+
+  script:
+    - docker pull eduardow3s/demoday:$VERSION
+    - docker run -dti -p 80:80 --name app-docker eduardow3s/demoday:$VERSION
